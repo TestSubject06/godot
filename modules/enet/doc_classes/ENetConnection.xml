@@ -145,6 +145,14 @@
 				Call this function regularly to handle connections, disconnections, and to receive new packets.
 			</description>
 		</method>
+		<method name="initiate_reciprocal_connection">
+			<return type="void" />
+			<param index="0" name="client_address" type="String" />
+			<param index="1" name="client_port" type="int" />
+			<description>
+				Attempts to open a path through NAT routing tables from your running host to a potential client by sending a dummy packet over UDP toward their known IP and Port. The expectation is to use this in conjunction with a third party observer that can determine the communication address and port of a potential client. This will never work for a client behind a Symmetric NAT.
+			</description>
+		</method>
 	</methods>
 	<constants>
 		<constant name="COMPRESS_NONE" value="0" enum="CompressionMode">
